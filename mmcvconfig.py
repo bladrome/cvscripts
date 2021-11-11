@@ -13,6 +13,6 @@ import sys
 configfile = sys.argv[1]
 
 cfg = mmcv.Config.fromfile(configfile)
-yolox = build_from_cfg(cfg.model, BACKBONES)
+model = build_from_cfg(cfg.model, BACKBONES)
 
 print(f'Config:\n{cfg.pretty_text}')
