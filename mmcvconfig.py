@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+
+import mmcv
+
+import mmdet
+from mmseg.models import BACKBONES
+from mmcv.utils import build_from_cfg
+from mmcv.runner import load_checkpoint
+
+import sys
+
+
+configfile = sys.argv[1]
+
+cfg = mmcv.Config.fromfile(configfile)
+yolox = build_from_cfg(cfg.model, BACKBONES)
+# load_checkpoint(yolox, checkpoint, map_location="cpu")
+
+print(f'Config:\n{cfg.pretty_text}')
