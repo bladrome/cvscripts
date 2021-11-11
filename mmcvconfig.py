@@ -14,6 +14,5 @@ configfile = sys.argv[1]
 
 cfg = mmcv.Config.fromfile(configfile)
 yolox = build_from_cfg(cfg.model, BACKBONES)
-# load_checkpoint(yolox, checkpoint, map_location="cpu")
 
 print(f'Config:\n{cfg.pretty_text}')
